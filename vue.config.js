@@ -30,6 +30,27 @@ module.exports = {
             })
           }
         })
+        let tokenkey='maxclass'
+        app.get('/api/login',(req,res)=>{
+          const {username,password} = req.query
+          const result = userpoor.filter(v=>{
+            if(v.username==username&&v.password==password) {
+              return v
+            }
+          })
+          if(result.length>0) {
+            res.json({
+              code: 0,
+              message: '登录成功',
+              token: tokenkey+'-'+username+'-'+(new Date().getTime()+60*60*1000)
+            })
+          }else {
+            res.json({
+              code: 1,
+              message: '登录失败'
+            })
+          }
+        })
       }
     }
   },

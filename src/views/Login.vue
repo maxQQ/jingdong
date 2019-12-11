@@ -6,6 +6,8 @@
             :schema="schema"
             @submit="submitHandler">
         </cube-form>
+        <div>{{$store.state.token}}</div>
+        <span>{{test}}</span>
     </div>
 </template>
 
@@ -17,6 +19,7 @@ export default {
                 username: '',
                 password: ''
             },
+            test: '',
             schema: {
                 fields: [
                     {
@@ -68,11 +71,11 @@ export default {
             e.preventDefault()
             try {
                 const result = await this.$http.get('/api/login',{params: this.model})
-                if(result.data.code=='0') {
-                    this.$store.commit('settoken',result.data.token)
-                    window.localStorage.setItem('token',result.data.token)
+                if(result.code=='0') {
+                    this.$store.commit('settoken',result.token)
+                    window.localStorage.setItem('token',result.token)
                 }else {
-                    alert(result.data.message)
+                    alert(result.message)
                 }
             } catch (error) {
                 console.log(err)
@@ -80,7 +83,7 @@ export default {
         }
     },
     mounted() {
-        
+        this.test=this.$store.state.token
     }
 }
 </script>

@@ -51,6 +51,25 @@ module.exports = {
             })
           }
         })
+        //banner图接口
+        app.get('/api/banner',(req,res)=>{
+          res.json({
+            data: [
+              {
+                url: 'https://m.xdclass.net',
+                image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/jdk8/docker_banner.png'
+              },
+              {
+                url: 'https://m.xdclass.net',
+                image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/jdk8/jdk8_banner.png'
+              },
+              {
+                url: 'https://m.xdclass.net',
+                image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png'
+              }
+            ]
+          })
+        })
       }
     }
   },

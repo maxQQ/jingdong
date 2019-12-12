@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="test">
     <cube-tab-bar
       class="botnav"
       v-model="selectedLabelDefault"
@@ -72,37 +72,44 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.cube-tab-bar.botnav {
-  position: fixed;
-  bottom: 0;
+#test {
+  position: relative;
   width: 100%;
-  z-index: 1000;
-  background: #ffffff;
 
-  .cube-tab div {
-    font-size: 16px;
-    padding-top: 3px;
+  .cube-tab-bar.botnav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    left: 0;
+    background: #ffffff;
+
+    .cube-tab div {
+      font-size: 16px;
+      padding-top: 3px;
+    }
+
+    i {
+      font-size: 20px;
+    }
   }
 
-  i {
-    font-size: 20px;
+  .Router {
+    position: absolute;
+    width: 100%;
+    transition: all 100.8s ease;
   }
-}
 
-.Router {
-  position: absolute;
-  width: 100%;
-  transition: all 0.8s ease;
-}
+  .slide-left-enter, .slide-right-leave-active {
+    opacity: 0;
+    transform: translate(100%, 0);
+    -webkit-transform: translate(100%, 0);
+  }
 
-.slide-left-enter,.slide-right-leav-active {
-  opacity: 0;
-  -webkit-transform: translate(100%, 0);
-}
-
-.slide-left-leave-active,.slide-right-enter {
-  opacity: 0;
-  -webkit-transform: translate(-100%, 0);
-  transform: translate(-100%, 0);
+  .slide-left-leave-active, .slide-right-enter {
+    opacity: 0;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
 }
 </style>

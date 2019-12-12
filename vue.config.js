@@ -1,7 +1,7 @@
 module.exports = {
   configureWebpack: {
     devServer: {
-      open: true,
+      //open: true,
       //mock接口编写的地方 每次更改配置都需要重启项目才会生效
       before(app) {
         //注册接口 
@@ -67,6 +67,117 @@ module.exports = {
                 url: 'https://m.xdclass.net',
                 image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png'
               }
+            ]
+          })
+        })
+        //导航分类列表
+        app.get('/api/slideLists',(req,res)=> {
+          res.json({
+            data: [
+              [
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                }
+              ],
+              [
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                },
+                {
+                  url: 'https://m.xdclass.net',
+                  image: 'https://xd-video-pc-img.oss-cn-beijing.aliyuncs.com/xdclass_pro/video/python/WechatIMG14578.png',
+                  label: '分类一'
+                }
+              ],
             ]
           })
         })

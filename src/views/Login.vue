@@ -74,11 +74,12 @@ export default {
                 if(result.code=='0') {
                     this.$store.commit('settoken',result.token)
                     window.localStorage.setItem('token',result.token)
+                    this.$router.replace({path:'/index'})
                 }else {
                     alert(result.message)
                 }
             } catch (error) {
-                console.log(err)
+                console.log(error)
             }
         }
     },

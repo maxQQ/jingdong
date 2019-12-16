@@ -97,16 +97,16 @@ export default {
   .Router {
     position: absolute;
     width: 100%;
-    transition: all 100.8s ease;
+    transition: all 0.8s ease;
   }
 
-  .slide-left-enter, .slide-right-leave-active {
+  .slide-left-enter, .slide-right-leave-to {
     opacity: 0;
     transform: translate(100%, 0);
     -webkit-transform: translate(100%, 0);
   }
 
-  .slide-left-leave-active, .slide-right-enter {
+  .slide-left-leave-to, .slide-right-enter {
     opacity: 0;
     -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0);

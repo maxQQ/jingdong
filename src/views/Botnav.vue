@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 #test {
   position: relative;
   width: 100%;

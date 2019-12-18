@@ -8,11 +8,14 @@
       </ul>
     </cube-scroll>
     <cube-scroll class="rightpanels">
-      <ul>
+      <ul v-if="tags.length>0">
         <li v-for="(tag,index) in tags" :key="index">
           <img :src="tag.image" alt="">
           <p>{{tag.label}}</p>
         </li>
+      </ul>
+      <ul v-else>
+        <li>暂无数据</li>
       </ul>
     </cube-scroll>
   </div>
@@ -90,6 +93,38 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    selectlist(index) {
+      this.tabslabel.forEach((val,idx)=>{
+        if(index==idx) {
+          val.active=true
+        }else {
+          val.active=false
+        }
+      })
+      this.getclassify(index)
+    },
+    async getclassify(index) {
+      const result = await this.$http.get('/api/classify',{params:{type:index}})
+      if(result.data.length>0) {
+        this.tags = result.data
+      }else {
+        this.tags = []
+      }
+      console.log(this.tags)
+    }
+  },
+  created() {
+    this.getclassify(0)
+  },
+  mounted() {
+    //dom加载完全后的操作
+    const leftpanels = document.querySelector('.leftpanels')
+    const rightpanels = document.querySelector('.rightpanels')
+    const bodyheight = document.documentElement.clientHeight
+    leftpanels.style.height = bodyheight - 57+'px'
+    rightpanels.style.height = bodyheight - 57+'px'
   }
 }
 </script>
@@ -119,6 +154,8 @@ export default {
           justify-content  center
           align-items center
           font-size 15px
+          padding 20px
+          box-sizing border-box
           img   
             width 80px
             height 80px
